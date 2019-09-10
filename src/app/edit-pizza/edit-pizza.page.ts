@@ -31,5 +31,11 @@ export class EditPizzaPage {
     this.descricaoPizza = pizzaObjeto.descricaoPizza
     this.precoPizza = pizzaObjeto.precoPizza
   }
+  editar(form){
+    let dadosPizza = form.value
+    dadosPizza.id = this.idPizza
+    let dadosString = JSON.stringify(dadosPizza) //salvar no localStorage pq so aceita string
+    localStorage.setItem(this.idPizza.toString(), dadosString)
+  }
 
 }
