@@ -12,6 +12,7 @@ export class EditPizzaPage {
   descricaoPizza:String = ""
   precoPizza:String = ""
   idPizza:String = ""
+  pizzaPronta:Boolean = false;
 
   constructor(private activatedRoute:ActivatedRoute) { }
 
@@ -27,9 +28,14 @@ export class EditPizzaPage {
     let pizzaObjeto = JSON.parse(pizzaString)
     console.log(pizzaObjeto)
 
-    this.nomePizza = pizzaObjeto.nomePizza
-    this.descricaoPizza = pizzaObjeto.descricaoPizza
-    this.precoPizza = pizzaObjeto.precoPizza
+   setTimeout(() =>{
+    this.pizzaPronta = true
+    setTimeout(() => {
+      this.nomePizza = pizzaObjeto.nomePizza
+      this.descricaoPizza = pizzaObjeto.descricaoPizza
+      this.precoPizza = pizzaObjeto.precoPizza
+    }, 0)
+   }, 3000)
   }
   editar(form){
     let dadosPizza = form.value

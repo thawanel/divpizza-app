@@ -40,5 +40,4 @@ export class AddPizzaPage implements OnInit {
     })
     criacaoDoToast.present()
   }
-
 }
